@@ -1,28 +1,14 @@
-import { getLocalStorage } from "./utils.mjs";
+import {
+  // getLocalStorage,
+  // renderListWithTemplate,
+  qs,
+  loadHeaderFooter,
+} from "./utils.mjs";
+import { initCartIcon } from "./Cart.mjs";
+import ShoppingCart from "./ShoppingCart.mjs";
 
-function renderCartContents() {
-  const cartItems = getLocalStorage("so-cart");
-  const htmlItems = cartItems.map((item) => cartItemTemplate(item));
-  document.querySelector(".product-list").innerHTML = htmlItems.join("");
-}
+// show number of items in cart on the cart icon in header
+loadHeaderFooter(null, initCartIcon);
 
-function cartItemTemplate(item) {
-  const newItem = `<li class="cart-card divider">
-  <a href="#" class="cart-card__image">
-    <img
-      src="${item.Image}"
-      alt="${item.Name}"
-    />
-  </a>
-  <a href="#">
-    <h2 class="card__name">${item.Name}</h2>
-  </a>
-  <p class="cart-card__color">${item.Colors[0].ColorName}</p>
-  <p class="cart-card__quantity">qty: 1</p>
-  <p class="cart-card__price">$${item.FinalPrice}</p>
-</li>`;
-
-  return newItem;
-}
-
-renderCartContents();
+const cart = new ShoppingCart("so-cart", qs(".product-list"));
+cart.init();
