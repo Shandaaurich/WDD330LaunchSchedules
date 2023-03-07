@@ -6,4 +6,4 @@ loadHeaderFooter(null, initCartIcon);
 loadNavbar();
 
 //call newsletter alert message from the template
-alertRegister();
+// alertRegister();

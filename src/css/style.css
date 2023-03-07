@@ -19,6 +19,7 @@
   box-sizing: border-box;
 }
 body {
+  background-color: var(--black);
   margin: 0;
   font-family: var(--font-body);
   font-size: var(--font-base);
@@ -433,6 +434,7 @@ input:required:valid {
 }
 
 footer {
+  color: var(--primary-color);
   font-size: var(--small-font);
   padding: 1em;
 }

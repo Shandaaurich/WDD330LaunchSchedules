@@ -15,6 +15,7 @@ export default defineConfig({
         listing: resolve(__dirname, "src/product-listing/index.html"),
         search: resolve(__dirname, "src/search_pages/index.html"),
         admin: resolve(__dirname, "src/admin/index.html"),
+        giftshop: resolve(__dirname, "src/giftshop/index.html"),
         // product1: resolve(
         //   __dirname,
         //   "src/product_pages/cedar-ridge-rimrock-2.html"
